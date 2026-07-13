@@ -1,0 +1,39 @@
+.tape {
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--bg-1);
+  padding: 5px 0;
+  flex-shrink: 0;
+}
+
+.inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 28s linear infinite;
+}
+
+.inner:hover { animation-play-state: paused; }
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 8px;
+  font-size: 10px;
+}
+
+.sym {
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.sep {
+  color: var(--border-bright);
+  margin-left: 8px;
+}

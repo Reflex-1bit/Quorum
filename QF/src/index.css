@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Bebas+Neue&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --mono: 'IBM Plex Mono', monospace;
+  --display: 'Bebas Neue', sans-serif;
+  --sans: 'IBM Plex Sans', sans-serif;
+  --bg-0: #060606;
+  --bg-1: #0d0d0d;
+  --bg-2: #141414;
+  --bg-3: #1a1a1a;
+  --border: rgba(255,255,255,0.07);
+  --border-dim: rgba(255,255,255,0.04);
+  --border-bright: rgba(255,255,255,0.18);
+  --text-primary: rgba(255,255,255,0.9);
+  --text-secondary: rgba(255,255,255,0.5);
+  --text-muted: rgba(255,255,255,0.25);
+  --green: #00ff87;
+  --green-dim: rgba(0,255,135,0.12);
+  --red: #ff3b3b;
+  --red-dim: rgba(255,59,59,0.12);
+  --amber: #ffb800;
+  --amber-dim: rgba(255,184,0,0.12);
+  --blue: #60a5fa;
+  --blue-dim: rgba(96,165,250,0.12);
+  --purple: #c084fc;
+  --purple-dim: rgba(192,132,252,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { background: var(--bg-0); color: var(--text-primary); font-family: var(--mono); font-size: 11px; height: 100%; overflow: hidden; }
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+button { cursor: pointer; font-family: var(--mono); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

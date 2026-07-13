@@ -1,0 +1,66 @@
+.lb {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  border-radius: 1px;
+}
+
+.row:hover { background: var(--bg-2); }
+
+.row.selected {
+  background: var(--bg-2);
+  border-color: var(--agent-color);
+}
+
+.rank {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  font-weight: 500;
+}
+
+.rank.first {
+  color: var(--amber);
+  font-size: 12px;
+}
+
+.name {
+  font-family: var(--display);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.strategy {
+  font-size: 8px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 1px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.pct {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.winRate {
+  font-size: 8px;
+  color: var(--text-muted);
+}
