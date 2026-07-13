@@ -1,7 +1,7 @@
 # QUORUM
 
 **Multi-agent hedge fund simulator.** Five AI agents, each with a distinct trading
-strategy and personality, independently analyze real market data and trade —
+strategy and personality, independently analyze real market data and trade 
 or debate, or vote as a council on a single stock.
 
 ---
@@ -57,47 +57,8 @@ quorum-backend/            ← backend (FastAPI)
 ```
 
 ---
-
-## Setup
-
-### 1. Backend
-
-```powershell
-cd quorum-backend
-python -m pip install -r requirements.txt
-copy .env.example .env
-notepad .env
-```
-
-Get a **free** API key at [openrouter.ai/keys](https://openrouter.ai/keys)
-(no credit card needed for `:free` models) and paste it into `.env` on one line:
-
-```
-OPENROUTER_API_KEY=sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
-
-Run it:
-```powershell
-python -m uvicorn main:app --reload --port 8000
-```
-
-Confirm it's up at `http://localhost:8000/docs`.
-
-### 2. Frontend
-
-```powershell
-cd quorum
-npm install
-npm run dev
-```
-
-Open `http://localhost:5173`.
-
----
-
 ## Using it
 
-- Landing screen → **ENTER THE WAR ROOM**.
 - Type tickers in the status bar (comma-separated) → **▶ RUN AGENTS** — hits
   the backend, agents pull live data and decide BUY/SELL/HOLD via their
   assigned model.
@@ -122,24 +83,6 @@ Open `http://localhost:5173`.
 | POST | `/api/order/alpaca` | Place a real order via Alpaca |
 | GET | `/api/market/{ticker}` | Live market data + technicals |
 | POST | `/api/reset` | Reset the in-memory portfolio |
-
----
-
-## Troubleshooting
-
-- **`pip`/`npm`/`uvicorn` not recognized`** → use `python -m pip ...` and
-  `python -m uvicorn ...`, and make sure Node.js is installed from
-  [nodejs.org](https://nodejs.org).
-- **PowerShell blocks npm scripts** → run once:
-  `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
-- **`invalid x-api-key` / `Could not resolve authentication method`** → your
-  `.env` key likely has a line break in the middle (copy-paste artifact).
-  Open it in Notepad and make sure the whole key is on ONE line.
-- **Port already in use** → `netstat -ano | findstr :8000` then
-  `taskkill /PID <pid> /F`, or just run on a different port
-  (`--port 8001`) and update `VITE_API_URL` in the frontend `.env` to match.
-- **"Failed to fetch" in the UI** → backend isn't running, or frontend
-  `.env`'s `VITE_API_URL` doesn't match the backend's actual port.
 
 ---
 
